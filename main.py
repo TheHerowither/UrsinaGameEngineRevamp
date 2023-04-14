@@ -1,7 +1,7 @@
 from ursina import *
 from lib.uger.cla import *
 from lib.uger.ats import *
-from lib.uger.dofef import *
+from dofef import *
 from lib.uger.editor.eui import *
 
 
