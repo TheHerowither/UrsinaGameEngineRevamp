@@ -9,6 +9,7 @@ class UGEREntity(Button):
         self.position = (0,0,0)
         self.parent = scene
         self.highlight_color = self.color + Vec4(.1, .1, .1, .1)
+        self.strmodel = str(model)
 class GizmoForObject(Entity):
     def __init__(self, object : UGEREntity):
         super().__init__()

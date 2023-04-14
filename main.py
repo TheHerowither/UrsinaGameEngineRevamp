@@ -20,7 +20,7 @@ in_scene_entities_gizmo = []
 pivot = Entity()
 sun = DirectionalLight(parent=pivot, y=10, z=10, shadows=True, scale = 10)
 sun.look_at((0,0,0))
-in_scene_entities.append(sun)
+#in_scene_entities.append(sun)
 
 
 eui = EditorUI(window)
@@ -38,6 +38,8 @@ def input(key):
                 i.disable()
     if key == "f1 up":
         eui.enabled = not eui.enabled
+    if key == "b":
+        Build(in_scene_entities)
 
 #Update loop
 def update():
