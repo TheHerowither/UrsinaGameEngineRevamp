@@ -20,11 +20,12 @@ in_scene_entities_gizmo = []
 pivot = Entity()
 sun = DirectionalLight(parent=pivot, y=10, z=10, shadows=True, scale = 10)
 sun.look_at((0,0,0))
-#in_scene_entities.append(sun)
+in_scene_entities.append(sun)
 
+print(type(sun))
 
 eui = EditorUI(window)
-sl = UGERSelectionMenu(["cube", "sphere", "plane"], in_scene_entities, in_scene_entities_gizmo)
+sl = UGERSelectionMenu(["cube", "sphere", "plane", "sky"], in_scene_entities, in_scene_entities_gizmo)
 
 #Input loop
 def input(key):
@@ -38,6 +39,8 @@ def input(key):
                 i.disable()
     if key == "f1 up":
         eui.enabled = not eui.enabled
+    if key == "w":
+        write_file(in_scene_entities)
     if key == "b":
         Build(in_scene_entities)
 
