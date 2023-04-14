@@ -1,4 +1,4 @@
-import os, shutil, sys
+import os, shutil
 import PyInstaller.__main__ as pyi
 from ursina import *
 from threading import Thread
