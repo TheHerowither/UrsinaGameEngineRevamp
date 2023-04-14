@@ -5,8 +5,6 @@ from lib.uger.editor.eui import *
 
 
 
-print("dofef begun")
-
 
 app = Ursina()
 window.borderless = False
