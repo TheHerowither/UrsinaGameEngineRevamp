@@ -3,7 +3,9 @@ from ursina import *
 from lib.qol import *
 from lib.uger.cla import *
 from lib.uger.ats import *
+from lib.uger.coder.ced import *
 from lib.uger.editor.eui import *
+
 
 
 
@@ -22,15 +24,15 @@ sun = DirectionalLight(parent=pivot, y=10, z=10, shadows=True, scale = 10)
 sun.look_at((0,0,0))
 in_scene_entities.append(sun)
 
-print(type(sun))
+
 
 eui = EditorUI(window)
 sl = UGERSelectionMenu(["cube", "sphere", "plane", "sky"], in_scene_entities, in_scene_entities_gizmo)
+code_editor = UGERCodeEditor()
+code_editor.enable()
 
 #Input loop
 def input(key):
-    sl.input(key)
-    #print(key)
     if key == "left mouse down":
         for i in in_scene_entities_gizmo:
             if i.object.hovered:

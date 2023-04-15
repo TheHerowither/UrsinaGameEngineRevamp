@@ -1,8 +1,9 @@
 from ursina import *
 from ursina.prefabs.dropdown_menu import DropdownMenu, DropdownMenuButton
 import lib.uger.cla as cla
-class UGERSelectionMenu:
+class UGERSelectionMenu(Entity):
     def __init__(self, models : list, in_scene_entities : list, in_scene_gizmos : list):
+        super().__init__(self)
         self.in_scene_entities = in_scene_entities
         self.in_scene_gizmos = in_scene_gizmos
         btns = []
