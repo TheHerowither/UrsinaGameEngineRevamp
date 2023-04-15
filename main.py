@@ -37,12 +37,8 @@ def input(key):
                 i.toggle()
             if (not i.object.hovered and not i.get_hovered()):
                 i.disable()
-    if key == "f1 up":
-        eui.enabled = not eui.enabled
-    if key == "w":
-        write_file(in_scene_entities)
     if key == "b":
-        Build(in_scene_entities)
+        Build(in_scene_entities, "b")
 
 #Update loop
 def update():
