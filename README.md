@@ -13,11 +13,11 @@ pip install Ursina & pip install pyinstaller
 ```
 After that, just run the engine and the engine will start.
 ### Controls:
-#### Right click:
+##### Right click:
 Open AddToScene menu, this will let you add objects to the scene
-#### Left click:
+##### Left click:
 Selection, you can select objects and/or move the around with this
-#### B
+##### B
 Build, This is subject to change, but this will let you build the scene that you have build
 
 # Building:
