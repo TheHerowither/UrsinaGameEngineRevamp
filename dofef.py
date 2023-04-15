@@ -32,7 +32,7 @@ def _del_folder(folder_path):
             print('Failed to delete %s. Reason: %s' % (file_path, e))
     
 
-def _build(in_scene_entities):
+def _build(in_scene_entities, name : str):
     start_time = time.time()
     write_file(in_scene_entities)
     alwaysinclude = os.getcwd() + "\\lib\\build\\alwaysinclude\\"
@@ -46,6 +46,7 @@ def _build(in_scene_entities):
         "--onefile",
         "--clean",
         "--log-level=CRITICAL",
+        f"-name={name}"
         *data,
         "lib\\build\\b.py",
         
@@ -60,5 +61,3 @@ def Build(in_scene_entities : list):
     th.start()
     print("[DOFEF Build system]: Begining to build program on thread", th)
     print("[DOFEF Build system]: Disabling pyinstaller output")
-    
-    
