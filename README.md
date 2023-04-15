@@ -24,6 +24,7 @@ Build, This is subject to change, but this will let you build the scene that you
 A build is created using the DOFEF Build system, developed by me, that is included in the dofef.py file.
 What it will do, is take the librarys saved in alwaysinclude and append them to a list that is used with the "--add-data" parameter of pyinstaller to add them to the build.
 ```python
+import PyInstaller.__main__ as pyi
 alwaysinclude = os.getcwd() + "\\lib\\build\\alwaysinclude\\"
 paths = os.listdir(alwaysinclude + "\\Lib\\site-packages")
 data = []
