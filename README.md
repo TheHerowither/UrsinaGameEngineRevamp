@@ -48,3 +48,5 @@ This will create an executable named "b.exe" in the dist folder, which has the s
 # Notes:
 Please note that this is an early prototype, and a lot of it is subject to change.
 I most of all hope that i manage to make the coding system waaaay better that in the originale UGER.
+
+Build will probably be released on my itch.io page.
