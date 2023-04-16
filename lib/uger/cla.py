@@ -1,13 +1,15 @@
 from ursina import *
 from ursina.shaders import *
 class UGEREntity(Button):
-    def __init__(self, model):
+    def __init__(self, model = "cube", rotation = (0,0,0), position = (0,0,0), shader = lit_with_shadows_shader, color = color.random_color(), scale = 1):
         super().__init__(self)
-        self.shader = lit_with_shadows_shader
+        self.shader = shader
         self.model = model
-        self.color = color.random_color()
-        self.position = (0,0,0)
+        self.color = color
+        self.scale = scale
+        self.position = position
         self.parent = scene
+        self.rotation = rotation
         self.highlight_color = self.color + Vec4(.1, .1, .1, .1)
         self.strmodel = str(model)
 class GizmoForObject(Entity):

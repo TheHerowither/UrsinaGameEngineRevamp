@@ -5,6 +5,7 @@ from lib.uger.cla import *
 from lib.uger.ats import *
 from lib.uger.coder.ced import *
 from lib.uger.editor.eui import *
+from lib.uger.savehandling.svf import *
 
 
 
@@ -29,10 +30,13 @@ in_scene_entities.append(sun)
 eui = EditorUI(window)
 sl = UGERSelectionMenu(["cube", "sphere", "plane", "sky"], in_scene_entities, in_scene_entities_gizmo)
 code_editor = UGERCodeEditor()
+save_handler = UGERSaveHandler(os.getcwd())
+save_handler.init("test")
 code_editor.enable()
 
 #Input loop
 def input(key):
+    global in_scene_entities, in_scene_entities_gizmo
     if key == "left mouse down":
         for i in in_scene_entities_gizmo:
             if i.object.hovered:
@@ -41,6 +45,10 @@ def input(key):
                 i.disable()
     if key == "b":
         Build(in_scene_entities, "b")
+    if key == "s":
+        save_handler.save(in_scene_entities)
+    if key == "l":
+        in_scene_entities, in_scene_entities_gizmo = save_handler.load_entities()
 
 #Update loop
 def update():

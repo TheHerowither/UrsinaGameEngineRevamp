@@ -19,6 +19,10 @@ Open AddToScene menu, this will let you add objects to the scene
 Selection, you can select objects and/or move the around with this
 ##### B:
 Build, This is subject to change, but this will let you build the scene that you have build
+##### L:
+Load, this will load what was saved in the "projects/test" folder, you cant currenlty change the name if the project, so only one can be save/loaded currently
+##### S:
+Save, this will save the project in the "projects/test" folder, you cant currenlty change the name if the project, so only one can be save/loaded currently
 
 # Building:
 A build is created using the DOFEF Build system, developed by me, that is included in the dofef.py file.
