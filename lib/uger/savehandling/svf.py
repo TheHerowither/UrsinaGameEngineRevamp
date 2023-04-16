@@ -46,4 +46,5 @@ class UGERSaveHandler:
                     gizmos.append(GizmoForObject(e))
                 if params[0] == "DirectionalLight": ents.append(DirectionalLight(position = StrToTuple(params[1]), shadows = params[2], scale = StrToTuple(params[3]), rotation = StrToTuple(params[4])))
                 if params[0] == "Sky": ents.append(Sky())
+        print(f"[{__name__}] Loaded savefile {self.name}")
         return ents, gizmos
