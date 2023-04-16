@@ -17,7 +17,7 @@ class UGERSelectionMenu(Entity):
                 raise TypeError(f"Input {i} at index {models.index(i)} is not a string")
         self.drop = DropdownMenu("Add to Scene", buttons = tuple(btns), enabled = False)
     def add_to_scene(self, model):
-        print(model)
+        print(f"[{__name__}]", "Added to scene", model)
         if model != "sky":
             ent = cla.UGEREntity(model = model)
             self.in_scene_entities.append(ent)
