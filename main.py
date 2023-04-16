@@ -32,7 +32,7 @@ sl = UGERSelectionMenu(["cube", "sphere", "plane", "sky"], in_scene_entities, in
 code_editor = UGERCodeEditor()
 save_handler = UGERSaveHandler(os.getcwd())
 save_handler.init("test")
-code_editor.enable()
+#code_editor.enable()
 
 #Input loop
 def input(key):
