@@ -1,6 +1,5 @@
 from ursina import *
 from lib.uger.cla import UGEREntity
-from lib.qol import *
 class UGERPanel(Panel):
     def __init__(self, position):
         super().__init__()
@@ -20,7 +19,7 @@ class UGERInspector(UGERPanel):
             if (self.active.toggled):
                 ac = self.active.object
                 self.pos_txt.text = (
-                    f"Position  X:{r(ac.x, 2)}  Y:{r(ac.y, 2)}  Z:{r(ac.z, 2)}"
+                    f"Position  X:{round(ac.x, 2)}  Y:{round(ac.y, 2)}  Z:{round(ac.z, 2)}"
                     )
         else:
             self.pos_txt.disable()
