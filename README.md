@@ -7,10 +7,8 @@ My plans are to add usability for coding objects, more editing options for objec
 
 ## Running the source code:
 If you want to have an early look at the game engine you will need to obviusly download the source code first.
-The you need to install the Ursina library and Pyinstaller, all other librarys are standard librarys from python.
-```bash
-pip install Ursina & pip install pyinstaller
-```
+Then just run the "SETUP/setip-{your-os}.{depends on os}".
+
 After that, just run the engine and the engine will start.
 ### Controls:
 ##### Right click:
