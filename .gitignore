@@ -7,9 +7,10 @@ lib/uger/editor/__pycache__/
 lib/uger/savehandling/__pycache__/
 
 
-#Projects and Builds
+#Anything that changes dynamicly
 projects/
 dist/
+lib/build/b.py
 
 #Logs
 logs/
