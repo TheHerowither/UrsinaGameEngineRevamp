@@ -46,13 +46,14 @@ def input(key):
                 i.disable()
     #if key == "b":
     #    Build(in_scene_entities)
-    if key == "s":
-        save_field.panel.enable()
+    
     #if key == "l":
     #    in_scene_entities, in_scene_entities_gizmo = save_handler.load_entities()
 
 #Update loop
 def update():
     eui.update()
+    if (held_keys["control"] and held_keys["s"]):
+        save_field.panel.enable()
 cam = EditorCamera()
 app.run()
