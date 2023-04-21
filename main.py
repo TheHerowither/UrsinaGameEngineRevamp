@@ -31,7 +31,9 @@ eui = EditorUI(window)
 sl = UGERSelectionMenu(["cube", "sphere", "plane", "sky"], in_scene_entities, in_scene_entities_gizmo)
 code_editor = UGERCodeEditor()
 save_handler = UGERSaveHandler(os.getcwd())
+save_field = UGERInputWIndow("Save as", "Save", save_handler.save, [in_scene_entities, ], save_handler)
 save_handler.init("test")
+
 #code_editor.enable()
 
 #Input loop
@@ -43,12 +45,12 @@ def input(key):
                 i.toggle()
             if (not i.object.hovered and not i.get_hovered()):
                 i.disable()
-    if key == "b":
-        Build(in_scene_entities, "b")
+    #if key == "b":
+    #    Build(in_scene_entities)
     if key == "s":
-        save_handler.save(in_scene_entities)
-    if key == "l":
-        in_scene_entities, in_scene_entities_gizmo = save_handler.load_entities()
+        save_field.panel.enable()
+    #if key == "l":
+    #    in_scene_entities, in_scene_entities_gizmo = save_handler.load_entities()
 
 #Update loop
 def update():

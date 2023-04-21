@@ -1,5 +1,6 @@
 from ursina import *
 from lib.uger.editor.pnl import *
+from lib.uger.savehandling.svf import *
 class EditorUI(Entity):
     def __init__(self, app : application):
         super().__init__(self)
@@ -14,3 +15,26 @@ class EditorUI(Entity):
             self.rightp.do_inspect(obj)
         else:
             self.rightp.reset()
+
+class UGERInputWIndow:
+    def __init__(self, title, button_text, on_submit, params, save_handler):
+        
+        self.title = title
+        self.popup = True
+        self.params = params
+        self.save_handler = save_handler
+        self.enabled = False
+        self.on_submit = on_submit
+        self.input = InputField(parent = self)
+        self.panel = WindowPanel(popup = self.popup, title = self.title, enabled = self.enabled, content = (
+            Space(),
+            self.input,
+            Button(text = button_text, on_click = self.returnval, parent = self)
+        ))
+    def returnval(self):
+        self.panel.disable()
+        if "returnval" in self.params:
+           self.params[self.params.index("returnval")] = self.input.text
+        if self.save_handler != None:
+            self.save_handler.init(self.input.text)
+        self.on_submit(*self.params)
