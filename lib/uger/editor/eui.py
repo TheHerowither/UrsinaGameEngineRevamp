@@ -17,7 +17,7 @@ class EditorUI(Entity):
             self.rightp.reset()
 
 class UGERInputWIndow:
-    def __init__(self, title, button_text, on_submit, params, save_handler):
+    def __init__(self, title, button_text, on_submit, params, save_handler = None):
         
         self.title = title
         self.popup = True

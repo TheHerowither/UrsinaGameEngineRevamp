@@ -17,15 +17,17 @@ After that, just run the engine and the engine will start.
 Open AddToScene menu, this will let you add objects to the scene
 ##### Left click:
 Selection, you can select objects and/or move the around with this
-##### B:
+##### Control B:
 Build, This is subject to change, but this will let you build the scene that you have build
-##### L:
+##### Control L:
 Load, this will load what was saved in the "projects/test" folder, you cant currenlty change the name if the project, so only one can be save/loaded currently
-##### S:
+##### Control S:
 Save, this will save the project in the "projects/test" folder, you cant currenlty change the name if the project, so only one can be save/loaded currently
 
 # Building:
 A build is created using the DOFEF Build system, developed by me, that is included in the dofef.py file.
+
+First it will ask you to enter a name ({name})
 What it will do, is take the librarys saved in "alwaysinclude" and append them to a list that is used with the "--add-data" parameter of pyinstaller to add them to the build.
 ```python
 import os
@@ -46,7 +48,7 @@ pyi.run([
         
 ])
 ```
-This will create an executable named "b.exe" in the dist folder, which has the scene you built in it, just that you yet cannot move the camera in the build.
+This will create an executable named "{name}.exe" in the dist folder, which has the scene you built in it, just that you yet cannot move the camera in the build.
 
 
 # Notes:

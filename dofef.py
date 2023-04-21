@@ -46,17 +46,17 @@ def _build(in_scene_entities, name : str):
         "--onefile",
         "--clean",
         "--log-level=CRITICAL",
-        f"-name={name}"
+        f"--name={name}",
         *data,
         "lib\\build\\b.py",
         
     ])
     print("[DOFEF Build system]: Build complete, cleaning up")
     _del_folder(f"{os.getcwd()}\\build")
-    os.system("del b.spec")
+    os.system(f"del {name}.spec")
     print("[DOFEF Build system]: Completed building program in:", time.time()-start_time, "seconds")
-def Build(in_scene_entities : list):
-    th = Thread(target = _build, args = [in_scene_entities,])
+def Build(in_scene_entities : list, name : str):
+    th = Thread(target = _build, args = [in_scene_entities,name, ])
     print("[DOFEF Build system]: Initialized build thread", th)
     th.start()
     print("[DOFEF Build system]: Begining to build program on thread", th)

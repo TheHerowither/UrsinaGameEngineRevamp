@@ -17,3 +17,6 @@ logs/
 
 #Files because im lazy:
 batch/
+
+#Spec files
+*.spec
