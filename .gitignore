@@ -13,3 +13,6 @@ dist/
 
 #Logs
 logs/
+
+#Files because im lazy:
+batch/
