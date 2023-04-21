@@ -1,10 +1,10 @@
 #Pycache's
-/__pycache__
-/lib/__pycache__
-/lib/uger/__pycache__
-/lib/uger/coder/__pycache__
-/lib/uger/editor/__pycache__
-/lib/uger/savehandling/__pycache__
+__pycache__
+lib/__pycache__
+lib/uger/__pycache__
+lib/uger/coder/__pycache__
+lib/uger/editor/__pycache__
+lib/uger/savehandling/__pycache__
 
 
 #Projects and Builds
