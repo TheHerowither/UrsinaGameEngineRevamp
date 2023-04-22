@@ -18,9 +18,9 @@ Selection, you can select objects and/or move the around with this
 ##### Control B:
 Build, This is subject to change, but this will let you build the scene that you have build
 ##### Control L:
-Load, this will load what was saved in the "projects/test" folder, you cant currenlty change the name if the project, so only one can be save/loaded currently
+Load, this will load what was saved in the "projects/{name}" folder, you can now change the name of projects when saving
 ##### Control S:
-Save, this will save the project in the "projects/test" folder, you cant currenlty change the name if the project, so only one can be save/loaded currently
+Save, this will save the project in the "projects/{name}" folder, you can now change the name of projects when saving
 
 # Building:
 A build is created using the DOFEF Build system, developed by me, that is included in the dofef.py file.
@@ -52,5 +52,7 @@ This will create an executable named "{name}.exe" in the dist folder, which has 
 # Notes:
 Please note that this is an early prototype, and a lot of it is subject to change.
 I most of all hope that i manage to make the coding system waaaay better that in the originale UGER.
+
+Please note that you currently can not change the poject that will be loaded
 
 Build will probably be released on my itch.io page.
