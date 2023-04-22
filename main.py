@@ -1,10 +1,11 @@
+#Pre import
 import sys
 origstd = sys.stdout
 origerr = sys.stderr
-__name__ = "UGER__main__"
+__name__ = "UGER.__main__"
 sys.stdout = open(f"logs/{__name__}.log", "w")
 sys.stderr = open(f"logs/{__name__}.err.log", "w")
-
+#Imports
 from dofef import *
 from ursina import *
 from lib.uger.cla import *
@@ -14,7 +15,8 @@ from lib.uger.editor.eui import *
 from lib.uger.savehandling.svf import *
 
 
-
+#Pre init
+Clean(os.getcwd())
 
 #Initialization
 app = Ursina()
@@ -65,5 +67,3 @@ def update():
         in_scene_entities, in_scene_entities_gizmo = save_handler.load_entities()
 cam = EditorCamera()
 app.run()
-sys.stdout = origstd
-sys.stderr = origerr

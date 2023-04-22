@@ -1,6 +1,7 @@
 import os
 from ursina import *
 from lib.uger.cla import *
+from dofef import _del_folder
 def StrToTuple(string):
     t = string.split()
     tup = []
@@ -10,7 +11,6 @@ def StrToTuple(string):
         i = i.replace(",", "")
         tup.append(float(i))
     return tuple(tup)
-
 class UGERSaveHandler:
     def __init__(self, root_folder):
         self.root = root_folder
@@ -48,3 +48,7 @@ class UGERSaveHandler:
                 if params[0] == "Sky": ents.append(Sky())
         print(f"[{__name__}] Loaded savefile {self.name}")
         return ents, gizmos
+def Clean(root_dir):
+    for (dirpath, dirnames, filenames) in os.walk(root_dir):
+        if "__pycache__" in dirnames:
+            _del_folder(dirpath+"\__pycache__")
