@@ -26,7 +26,7 @@ Save, this will save the project in the "projects/{name}" folder, you can now ch
 A build is created using the DOFEF Build system, developed by me, that is included in the dofef.py file.
 
 First it will ask you to enter a name ({name})
-What it will do, is take the librarys saved in "alwaysinclude" and append them to a list that is used with the "--add-data" parameter of pyinstaller to add them to the build.
+Then it writes the necessary information into the "b.py" file, then what it will do, is take the librarys saved in "alwaysinclude" and append them to a list that is used with the "--add-data" parameter of pyinstaller to add them to the build.
 ```python
 import os
 import PyInstaller.__main__ as pyi
