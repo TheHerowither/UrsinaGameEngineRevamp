@@ -40,7 +40,7 @@ def _build(in_scene_entities, name : str):
     data = []
     for i in paths:
         data.append(f'--add-data=lib\\build\\alwaysinclude\\Lib\\site-packages\\{i};{i}')
-    #print(data)
+    print(data)
     pyi.run([
         "--console",
         "--onefile",

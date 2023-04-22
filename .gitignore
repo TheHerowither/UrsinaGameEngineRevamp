@@ -12,6 +12,9 @@ projects/
 dist/
 lib/build/b.py
 
+#Unimportant pyfiles
+build.py
+
 #Logs
 logs/
 

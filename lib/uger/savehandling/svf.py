@@ -32,10 +32,11 @@ class UGERSaveHandler:
             for i in ent:
                 f.write(i+"\n")
         print(f"[{__name__}]: Saved!")
-    def load_entities(self) -> tuple:
+    def load_entities(self, name) -> tuple:
         ents = []
         gizmos = []
-        with open(self.root+f"\\projects\\{self.name}\\entities.ugersf") as f:
+        name
+        with open(self.root+f"\\projects\\{name}\\entities.ugersf") as f:
             content = f.read()
             lines = content.split("\n")
             for line in lines:
@@ -46,7 +47,7 @@ class UGERSaveHandler:
                     gizmos.append(GizmoForObject(e))
                 if params[0] == "DirectionalLight": ents.append(DirectionalLight(position = StrToTuple(params[1]), shadows = params[2], scale = StrToTuple(params[3]), rotation = StrToTuple(params[4])))
                 if params[0] == "Sky": ents.append(Sky())
-        print(f"[{__name__}] Loaded savefile {self.name}")
+        print(f"[{__name__}] Loaded savefile {name}")
         return ents, gizmos
 def Clean(root_dir):
     for (dirpath, dirnames, filenames) in os.walk(root_dir):

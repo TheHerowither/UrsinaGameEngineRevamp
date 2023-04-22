@@ -16,7 +16,7 @@ class EditorUI(Entity):
         else:
             self.rightp.reset()
 
-class UGERInputWIndow:
+class UGERInputWindow:
     def __init__(self, title, button_text, on_submit, params, save_handler = None):
         
         self.title = title
@@ -26,15 +26,19 @@ class UGERInputWIndow:
         self.enabled = False
         self.on_submit = on_submit
         self.input = InputField(parent = self)
+        self.returned = None
+        self.has_been_called = False
         self.panel = WindowPanel(popup = self.popup, title = self.title, enabled = self.enabled, content = (
             Space(),
             self.input,
             Button(text = button_text, on_click = self.returnval, parent = self)
         ))
     def returnval(self):
+        self.has_been_called = False
         self.panel.disable()
         if "returnval" in self.params:
            self.params[self.params.index("returnval")] = self.input.text
         if self.save_handler != None:
             self.save_handler.init(self.input.text)
-        self.on_submit(*self.params)
+        self.returned = self.on_submit(*self.params)
+        self.has_been_called = True
