@@ -40,7 +40,7 @@ pyi.run([
     "--onefile",
     "--clean",
     "--log-level=CRITICAL",
-    f"-name={name}"
+    f"--name={name}"
     *data,
     "lib\\build\\b.py",
         
