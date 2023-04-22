@@ -20,7 +20,7 @@ Build, This is subject to change, but this will let you build the scene that you
 ##### Control L:
 Load, this will load what was saved in the "projects/{name}" folder, you can now change the name of projects when saving
 ##### Control S:
-Save, this will save the project in the "projects/{name}" folder, you can now change the name of projects when saving
+Save, this will save the project in the "projects/{name}" folder, you can now change the name of projects when saving. But if you load one project and wanna load another one youll have to restart the engine. this is caused by a bug that i still havent yet fuigured out how to fix
 
 # Building:
 A build is created using the DOFEF Build system, developed by me, that is included in the dofef.py file.
