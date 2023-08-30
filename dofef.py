@@ -56,8 +56,8 @@ def _build(in_scene_entities, name : str):
     os.system(f"del {name}.spec")
     print("[DOFEF Build system]: Completed building program in:", time.time()-start_time, "seconds")
 def Build(in_scene_entities : list, name : str):
-    th = Thread(target = _build, args = [in_scene_entities,name, ])
-    print("[DOFEF Build system]: Initialized build thread", th)
-    th.start()
-    print("[DOFEF Build system]: Begining to build program on thread", th)
-    print("[DOFEF Build system]: Disabling pyinstaller output")
+    build_thread = Thread(target = _build, args = [in_scene_entities,name, ])
+    print(f"[DOFEF Build system - {__name__}]: Initialized build thread", build_thread)
+    build_thread.start()
+    print(f"[DOFEF Build system - {__name__}]: Begining to build program on thread", build_thread)
+    print(f"[DOFEF Build system - {__name__}]: Disabling pyinstaller output")

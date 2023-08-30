@@ -1,5 +1,5 @@
+#PNL - Panel
 from ursina import *
-from lib.uger.cla import UGEREntity
 class UGERPanel(Panel):
     def __init__(self, position):
         super().__init__()

@@ -1,3 +1,4 @@
+#EUI - Editor UI
 from ursina import *
 from lib.uger.editor.pnl import *
 from lib.uger.savehandling.svf import *

@@ -13,6 +13,7 @@ from ursina import *
 from dofef import *
 from lib.uger.cla import *
 from lib.uger.ats import *
+from lib.uger.sth import *
 from lib.uger.coder.ced import *
 from lib.uger.editor.eui import *
 from lib.uger.savehandling.svf import *
@@ -39,12 +40,13 @@ sun.look_at((0,0,0))
 in_scene_entities.append(sun)
 
 
+settings = Settings("settings.ini")
 
 eui = EditorUI(window)
 sl = UGERSelectionMenu(["cube", "sphere", "plane", "sky"], in_scene_entities, in_scene_entities_gizmo)
 code_editor = UGERCodeEditor()
 save_handler = UGERSaveHandler(os.getcwd())
-save_field = UGERInputWindow("Save as", "Save", save_handler.save, [in_scene_entities, ], save_handler)
+save_field = UGERInputWindow("Enter name", "Save", save_handler.save, [in_scene_entities, ], save_handler)
 build_input = UGERInputWindow("Build as", "Build", Build, [in_scene_entities, "returnval",])
 load_input = UGERInputWindow("Load", "Load!", save_handler.load_entities, ["returnval",])
 
@@ -58,13 +60,11 @@ def input(key):
                 i.disable()
     
     
-
+save_field.panel.enable()
 #Update loop
 def update():
     global in_scene_entities, in_scene_entities_gizmo
     eui.update()
-    if (held_keys["control"] and held_keys["s"]):
-        save_field.panel.enable()
     if (held_keys["control"] and held_keys["b"]):
         build_input.panel.enable()
     if (held_keys["control"] and held_keys["l"]):

@@ -1,4 +1,5 @@
-import os
+#SVF - Save file
+import os, pickle
 from ursina import *
 from lib.uger.cla import *
 from dofef import _del_folder
@@ -28,16 +29,18 @@ class UGERSaveHandler:
             if type(i) == UGEREntity: ent.append(f"Entity;{tuple(i.position)};{tuple(i.rotation)};{tuple(i.scale)};{i.strmodel};{tuple(i.color)};lit_with_shadows_shader")
             elif type(i) == DirectionalLight: ent.append(f"DirectionalLight;{tuple(i.position)};{i.shadows};{tuple(i.scale)};{tuple(i.rotation)})")
             elif type(i) == Sky: ent.append("Sky;")
-        with open(self.root+f"\\projects\\{self.name}\\entities.ugersf", "w") as f:
+        path = self.root+f"\\projects\\{self.name}"
+        with open(path+"\\entities.ugersf", "wb") as f:
             for i in ent:
-                f.write(i+"\n")
+                f.write(pickle.dumps(str(i)))
         print(f"[{__name__}]: Saved!")
+        print(f"[{__name__}]: Save location {path}")
     def load_entities(self, name) -> tuple:
         ents = []
         gizmos = []
         name
         with open(self.root+f"\\projects\\{name}\\entities.ugersf") as f:
-            content = f.read()
+            content = pickle.loads(f.read())
             lines = content.split("\n")
             for line in lines:
                 params = line.split(";")
@@ -47,6 +50,7 @@ class UGERSaveHandler:
                     gizmos.append(GizmoForObject(e))
                 if params[0] == "DirectionalLight": ents.append(DirectionalLight(position = StrToTuple(params[1]), shadows = params[2], scale = StrToTuple(params[3]), rotation = StrToTuple(params[4])))
                 if params[0] == "Sky": ents.append(Sky())
+        f.close()
         print(f"[{__name__}] Loaded savefile {name}")
         return ents, gizmos
 def Clean(root_dir):
